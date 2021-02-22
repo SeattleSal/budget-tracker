@@ -144,6 +144,35 @@ function sendTransaction(isAdding) {
   });
 }
 
+// clearTransactions - clear budget and reset to zero
+function clearTransactions() {
+  // clear local transactions
+  transactions.length = 0;
+  console.log(transactions);
+
+  // re-run logic to populate UI with new record
+  // populateChart();
+  // populateTable();
+  // populateChart();
+
+  // send to server
+  fetch("/api/clear", {
+    method: 'DELETE'
+  })
+  .then((response) => {
+    return response.json();
+  })
+  .then((data) => {
+    transactions = [];
+    populateTotal();
+    populateTable();
+    populateChart();
+  })
+  .catch((err) => {
+    console.log("Clear error: " + err);
+  })
+}
+
 document.querySelector("#add-btn").onclick = function() {
   sendTransaction(true);
 };
@@ -151,3 +180,8 @@ document.querySelector("#add-btn").onclick = function() {
 document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
 };
+
+document.querySelector('#clear-btn').onclick = function() {
+  event.preventDefault();
+  clearTransactions();
+}
