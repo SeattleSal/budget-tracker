@@ -8,7 +8,6 @@ fetch("/api/transaction")
   .then(data => {
     // save db data on global variable
     transactions = data;
-
     populateTotal();
     populateTable();
     populateChart();
@@ -147,13 +146,8 @@ function sendTransaction(isAdding) {
 // clearTransactions - clear budget and reset to zero
 function clearTransactions() {
   // clear local transactions
-  transactions.length = 0;
+  transactions = [];
   console.log(transactions);
-
-  // re-run logic to populate UI with new record
-  // populateChart();
-  // populateTable();
-  // populateChart();
 
   // send to server
   fetch("/api/clear", {
@@ -174,10 +168,12 @@ function clearTransactions() {
 }
 
 document.querySelector("#add-btn").onclick = function() {
+  event.preventDefault(); // do i need this?
   sendTransaction(true);
 };
 
 document.querySelector("#sub-btn").onclick = function() {
+  event.preventDefault(); // do i need this?
   sendTransaction(false);
 };
 
