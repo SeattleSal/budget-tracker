@@ -1,8 +1,34 @@
-# budget-tracker
+# Online/Offline Budget Trackers
 
-# Unit 18 PWA Homework: Online/Offline Budget Trackers
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
-Add functionality to our existing Budget Tracker application to allow for offline access and functionality.
+## Table of Contents
+* [Description](#description)
+* [Links](#links)
+* [User Story](#User_Story)
+* [Acceptance Criteria](#Acceptance_Criteria)
+* [Dependencies](#Dependencies)
+* [Usage](#usage)
+* [License](#license)
+
+## Description
+This application is a budget tracker for users to track their expenses and deposits whether online or offline. When entering transaction offline, the transactions will populate the total when brought back online.
+
+For this assignment, the front end code `Develop` folder was provided and I created the db.js file to capture transactions offline. Also, I added a clear budget button and functionality.
+
+## Links
+* Live Website: https://seattlesal-budget-tracker.herokuapp.com/
+* Github Link: https://github.com/SeattleSal/budget-tracker
+
+## User_Story
+AS AN avid traveller
+I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
+SO THAT my account balance is accurate when I am traveling
+
+## Acceptance_Criteria
+GIVEN a user is on Budget App without an internet connection
+WHEN the user inputs a withdrawal or deposit
+THEN that will be shown on the page, and added to their transaction history when their connection is back online.
 
 The user will be able to add expenses and deposits to their budget with or without a connection. When entering transactions offline, they should populate the total when brought back online.
 
@@ -16,50 +42,57 @@ When brought back online:
 
   * Offline entries should be added to tracker.
 
-## User Story
-AS AN avid traveller
-I WANT to be able to track my withdrawals and deposits with or without a data/internet connection
-SO THAT my account balance is accurate when I am traveling
+## Dependencies
+The dependencies are:
+* [express](http://expressjs.com/) for the web framework
+* [mongoose](https://www.npmjs.com/package/mongoose) for the Object Modeling tool for use with MongoDB.
+* [morgan](https://www.npmjs.com/package/morgan) for the middleware. 
+* [compression](https://www.npmjs.com/package/compression) to reduce the downloadable amount of data that's served to users.
+* [lite-server](https://www.npmjs.com/package/lite-server) a light weight development web server for single page applications (SPA)
 
-## Business Context
+There is a `package.json` included, the following commands should be run to install dependencies:
 
-Giving users a fast and easy way to track their money is important, but allowing them to access that information anytime is even more important. Having offline functionality is paramount to our applications success.
+```bash
+npm i
+```
+
+## Usage
+Use the links above to use the application live. If you prefer to run the application from your computer, you can use the following command after installing the dependencies:
+
+```bash
+node server.js
+```
+
+The application displays a homepage with information about the last workout. The user can add exercises to the last workout or create a new workout. When the user creates a new workout they can choose to add Cardio (Name, Distance, Duration) or Resistance (Name, Weight, Sets, Reps, Duration) exercises. The user can also see statistics of their last 7 workouts in the dashboard.
+
+See Screenshots:<br>
+Home Page: <br>
+![Home Page](./assets/home.JPG)<br>
+Offline transactions are stored in IndexeDB: <br>
+![Offline](./assets/offline.JPG)<br>
 
 
-## Acceptance Criteria
-GIVEN a user is on Budget App without an internet connection
-WHEN the user inputs a withdrawal or deposit
-THEN that will be shown on the page, and added to their transaction history when their connection is back online.
+## License
 
-- - -
+MIT License
 
-## Commit Early and Often
+Copyright (c) [2021] [Sally Perez]
 
-* One of the most important skills to master as a web developer is version control. Building the habit of committing via Git is important for two reasons:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-1. Your commit history is a signal to employers that you are actively working on projects and learning new skills
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-2. Your commit history allows you to revert your code base in the event that you need to return to a previous state
-
-* Follow these guidelines for committing:
-
-  * Make single purpose commits for related changes to ensure a clean, manageable history. If you are fixing two issues, make two commits
-
-  * Write descriptive, meaningful commit messages so that you and anyone else looking at your repository can easily understand its history
-
-  * Don't commit half done work, for the sake of your collaborators (and your future self!)
-
-  * Test your application before you commit to ensure functionality at every step in the development process
-
-* We would like you to have well over 200 commits by graduation, so commit early and often!
-
-* Deploy your application with [Heroku and MongoDB Atlas.](../04-Important/MongoAtlas-Deploy.md)
-
-## Submission on BCS
-
-* You are required to submit the following:
-
-  * the URL to the deployed application
-
-  * the URL to the Github repository
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
