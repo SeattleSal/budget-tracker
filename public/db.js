@@ -1,4 +1,7 @@
+// db file for IndexedDB functionality offline
+
 let db;
+
 // Create a new db request for a budget database.
 const request = window.indexedDB.open("budget", 1);
 
@@ -28,6 +31,7 @@ function saveRecord(record) {
     pendingStore.add(record);
 }
 
+// checkDatabase - when back online post saved transactions and clear indexedDB
 function checkDatabase() {
     const transaction = db.transaction(["pending"], "readwrite");
     const pendingStore = transaction.objectStore("pending");
