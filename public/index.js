@@ -143,41 +143,12 @@ function sendTransaction(isAdding) {
   });
 }
 
-// clearTransactions - clear budget and reset to zero
-function clearTransactions() {
-  // clear local transactions
-  transactions = [];
-  console.log(transactions);
-
-  // send to server
-  fetch("/api/clear", {
-    method: 'DELETE'
-  })
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    transactions = [];
-    populateTotal();
-    populateTable();
-    populateChart();
-  })
-  .catch((err) => {
-    console.log("Clear error: " + err);
-  })
-}
-
 document.querySelector("#add-btn").onclick = function() {
-  event.preventDefault(); // do i need this?
   sendTransaction(true);
 };
 
 document.querySelector("#sub-btn").onclick = function() {
-  event.preventDefault(); // do i need this?
   sendTransaction(false);
 };
 
-document.querySelector('#clear-btn').onclick = function() {
-  event.preventDefault();
-  clearTransactions();
-}
+

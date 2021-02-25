@@ -14,7 +14,7 @@
 ## Description
 This application is a budget tracker for users to track their expenses and deposits whether online or offline. When entering transaction offline, the transactions will populate the total when brought back online.
 
-For this assignment, the front end code `Develop` folder was provided and I created the db.js file to capture transactions offline. Also, I added a clear budget button and functionality.
+For this assignment, the front end code `Develop` folder was provided and I created the db.js file to capture transactions offline. 
 
 ## Links
 * Live Website: https://seattlesal-budget-tracker.herokuapp.com/
